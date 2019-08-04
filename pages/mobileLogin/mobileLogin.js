@@ -22,7 +22,7 @@ Page({
       //     url: "/pages/user/user"
       //   })
       // })
-      app.globalLogin(17602458800, 111111,()=>{
+      app.globalLogin(13998836590, 111111,()=>{
         app.showInfo('登录成功')
         wx.reLaunch({
           url: "/pages/user/user"

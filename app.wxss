@@ -28,7 +28,15 @@
   border-radius: 50rpx;
 }
 
-
+/* 省略号 */
+.ellipsis{
+    display: -webkit-box;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+}
 /* 颜色 */
 .icon-color {
   color: #ccc;

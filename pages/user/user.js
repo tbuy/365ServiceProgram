@@ -7,21 +7,25 @@ Page({
   data: {
     menuList: [ {
       id: 1,
-      title: '我的订单',
-      router: '/pages/myOrder/myOrder'
+      title: '求职意向',
+      router: ''
     }, {
       id: 2,
-      title: '我的合同',
+      title: '我的抢单',
       router: ''
     }, {
       id: 3,
-      title: '联系客服',
+      title: '服务协议',
       router: ''
     }, {
       id: 4,
-      title: '关于我们',
+      title: '帮助中心',
       router: ''
-    }],
+      }, {
+        id: 5,
+        title: '建议反馈',
+        router: ''
+      }],
     isLogin: false,
     userName: '',
     icon:''

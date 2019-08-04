@@ -12,7 +12,7 @@
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "小程序学习",
+    "navigationBarTitleText": "365到家",
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
@@ -23,15 +23,9 @@
     "list": [
       {
         "pagePath": "pages/index/index",
-        "text": "首页",
+        "text": "找工作",
         "iconPath": "/images/un_home.png",
         "selectedIconPath": "/images/home.png"
-      },
-      {
-        "pagePath": "pages/classify/classify",
-        "text": "分类",
-        "iconPath": "/images/un_menu.png",
-        "selectedIconPath": "/images/menu.png"
       },
       {
         "pagePath": "pages/user/user",
