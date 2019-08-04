@@ -1,0 +1,50 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/user/user",
+    "pages/classify/classify",
+    "pages/WXlogin/WXlogin",
+    "pages/mobileLogin/mobileLogin",
+    "pages/myOrder/myOrder",
+    "pages/logout/logout",
+    "pages/editUser/editUser"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "小程序学习",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#666",
+    "selectedColor": "#b4282d",
+    "backgroundColor": "#fff",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "/images/un_home.png",
+        "selectedIconPath": "/images/home.png"
+      },
+      {
+        "pagePath": "pages/classify/classify",
+        "text": "分类",
+        "iconPath": "/images/un_menu.png",
+        "selectedIconPath": "/images/menu.png"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "text": "我的",
+        "iconPath": "/images/un_user.png",
+        "selectedIconPath": "images/user.png"
+      }
+    ]
+  },
+    "networkTimeout": {
+      "request": 10000,
+      "downloadFile": 10000
+    },
+    "debug": true,
+  "sitemapLocation": "sitemap.json"
+}
