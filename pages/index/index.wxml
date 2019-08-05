@@ -1,5 +1,5 @@
 <view class="list">
-  <view class='item' wx:for="{{list}}" wx:key="{{item.id}}" bindtap='goItem'>
+  <view class='item' wx:for="{{list}}" wx:key="{{item.id}}" bindtap='goItem' data-id="{{item.id}}">
     <view class='top'>
       <view class='title ellipsis'>{{item.work_type}}</view>
       <view class='price'>{{item.wage}}元</view>

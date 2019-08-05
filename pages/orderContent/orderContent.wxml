@@ -1,0 +1,15 @@
+<view class='order'>
+  <view class='top'>
+    <view class='title ellipsis'>{{order.work_type}}</view>
+    <view class='price'>{{order.wage}}元</view>
+  </view>
+
+  <view class='public_title'>开始服务日期： </view>
+  <view class='public_text'>{{order.service_duration}}</view>
+
+  <view class='public_title'>工作地址</view>
+  <view class='public_text'>{{order.service_address}}</view>
+
+  <view class='public_title'>详细要求</view>
+  <view class='public_text'>{{order.order_details}}</view>
+</view>

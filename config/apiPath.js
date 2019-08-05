@@ -22,7 +22,7 @@ module.exports = {
   getOrderList: apiPath + "/staff/order/getOrderList",
 
   //获取单个订单信息 get {id}
-  getOrder: apiPath + "/user/personal/getOrder",
+  getOrder: apiPath + "/staff/order/getOrder",
 
 
 

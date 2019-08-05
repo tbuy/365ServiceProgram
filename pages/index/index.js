@@ -38,7 +38,9 @@ Page({
     })
   },
   goItem(e){
-    console.log(e)
+    wx.navigateTo({
+      url: "/pages/orderContent/orderContent?id=" + e.currentTarget.dataset.id,
+    })
   },
   /**
    * 生命周期函数--监听页面加载
