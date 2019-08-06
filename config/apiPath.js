@@ -18,7 +18,7 @@ module.exports = {
 
 
 
-  //获取订单列表(懒加载) get {lastId}
+  //获取订单列表(懒加载) get {lastId,pageNumber}
   getOrderList: apiPath + "/staff/order/getOrderList",
 
   //获取单个订单信息 get {id}

@@ -10,6 +10,7 @@ Page({
     list:[],
     lastId: 0,
     isLast: true,
+    pageNumber: 10
   },
   getOrderList(lastId){
     wx.request({
@@ -17,10 +18,10 @@ Page({
       method: 'get',
       header: {
         'Content-Type': 'application/json',
-        'accessToken': wx.getStorageSync('accessToken')
       },
       data: {
-        lastId: lastId
+        lastId: lastId,
+        pageNumber: this.data.pageNumber
       },
       success: (res) => {
         if (res.data.code == 0) {
@@ -47,7 +48,7 @@ Page({
    */
   onLoad: function (options) {
  
-
+      console.log(app.formatDate(1564399502000))
 
   },
 

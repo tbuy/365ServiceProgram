@@ -1,12 +1,12 @@
-<view class="list">
+<view class="list theme_bgColor2 theme_word_deep">
   <view class='item' wx:for="{{list}}" wx:key="{{item.id}}" bindtap='goItem' data-id="{{item.id}}">
     <view class='top'>
-      <view class='title ellipsis'>{{item.work_type}}</view>
-      <view class='price'>{{item.wage}}元</view>
+      <view class='title ellipsis theme_wordSize_big'>{{item.work_type}}</view>
+      <view class='price theme_word_red theme_wordSize_normal'>{{item.wage}}元</view>
     </view>
 
-    <view class='public-text ellipsis'>工作时间： {{item.service_duration}}</view>
-    <view class='public-text ellipsis'>工作地点： {{item.service_address}}</view>
-    <view class='public-text ellipsis'>9月2日 发布</view>
+    <view class='public-text ellipsis theme_word_normal'>工作时间： {{item.service_duration}}</view>
+    <view class='public-text ellipsis theme_word_normal'>工作地点： {{item.service_address}}</view>
+    <view class='public-text ellipsis theme_word_normal'>{{ app.formatDate(item.created_at) }} 发布</view>
   </view>
 </view>

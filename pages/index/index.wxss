@@ -1,7 +1,6 @@
 .list {
   height: 100vh;
   overflow: auto;
-  background-color: #f5f5f5;
 }
 
 .item {
@@ -16,7 +15,6 @@
 }
 
 .title {
-  font-size: 40rpx;
   width: 70%;
   font-weight: 700;
   line-height: 70rpx;
@@ -24,8 +22,6 @@
 }
 
 .price {
-  color: red;
-  font-size: 38rpx;
   line-height: 70rpx;
 }
 
@@ -33,6 +29,4 @@
   width: 100%;
   line-height: 50rpx;
   height: 50rpx;
-  color: #999;
-  font-size: 30rpx;
 }
