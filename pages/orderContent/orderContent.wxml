@@ -1,15 +1,17 @@
-<view class='order'>
+<view class='order theme_wordSize_small'>
   <view class='top'>
-    <view class='title ellipsis'>{{order.work_type}}</view>
-    <view class='price'>{{order.wage}}元</view>
+    <view class='title ellipsis theme_wordSize_big theme_word_deep'>{{order.work_type}}</view>
+    <view class='price theme_word_red theme_wordSize_normal'>{{order.wage}}元</view>
   </view>
 
-  <view class='public_title'>开始服务日期： </view>
-  <view class='public_text'>{{order.service_duration}}</view>
+  <view class='public_title theme_wordSize_normal'>服务时间</view>
+  <view class='public_text theme_word_normal'>{{order.service_duration}}</view>
 
-  <view class='public_title'>工作地址</view>
-  <view class='public_text'>{{order.service_address}}</view>
+  <view class='public_title theme_wordSize_normal'>工作地址</view>
+  <view class='public_text theme_word_normal'>{{order.service_address}}</view>
 
-  <view class='public_title'>详细要求</view>
-  <view class='public_text'>{{order.order_details}}</view>
+  <view class='public_title theme_wordSize_normal'>详细要求</view>
+  <view class='public_text theme_word_normal'>{{order.order_details}}</view>
+
+  <button class='public_button_big theme_btn theme_wordSize_normal' style='margin-top: 100rpx;' bindtap='call'>立即下单</button>
 </view>

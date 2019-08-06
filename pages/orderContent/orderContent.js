@@ -23,7 +23,6 @@ Page({
       success: (res) => {
         if (res.data.code == 0) {
           let _data = res.data.data;
-          console.log(_data)
           this.setData({
             order: _data
           })
@@ -33,6 +32,12 @@ Page({
         app.showInfo(res.data.message)
       }
     })
+  },
+  call(){
+    wx.makePhoneCall({
+      phoneNumber: this.data.order.hold_manager_phone
+    })
+
   },
   /**
    * 生命周期函数--监听页面加载

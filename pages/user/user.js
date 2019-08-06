@@ -67,7 +67,7 @@ Page({
   //编辑资料
   edit() {
     wx.navigateTo({
-      url: '/pages/editUser/editUser',
+      url: '',
     })
   },
   /**

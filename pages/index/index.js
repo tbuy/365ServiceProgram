@@ -43,12 +43,24 @@ Page({
       url: "/pages/orderContent/orderContent?id=" + e.currentTarget.dataset.id,
     })
   },
+  upper(e) {
+    wx.startPullDownRefresh()
+  },
+  lower: function (e) {
+    console.log('更多')
+    try {
+      if (!this.data.isLast) {
+        this.getOrderList(this.data.lastId)
+      }
+    } catch (e) {
+
+    }
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
  
-      console.log(app.formatDate(1564399502000))
 
   },
 
@@ -89,27 +101,14 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-    conosole.log('刷新')
-    try {
- 
-      this.getOrderList(0)
-    } catch (e) {
 
-    }
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-    conosole.log('更多')
-    try {
-      if (!this.data.isLast) {
-        this.getOrderList(this.data.lastId)
-      }
-    } catch (e) {
 
-    }
   },
 
   /**

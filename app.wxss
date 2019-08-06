@@ -12,8 +12,6 @@
 .public_button_big {
   width: 80%;
   border: 0 none;
-  background-color: rgb(240, 178, 46);
-  font-size: 30rpx;
   height: 80rpx;
   line-height: 80rpx;
   color: #fff;
@@ -43,6 +41,10 @@
 .icon-color {
   color: #ccc;
 }
+/* 按钮颜色 */
+.theme_btn {
+  background-color: #ff7832;
+}
 /* 主色背景 */
 .theme_bgColor1{
     background-color: #ff6400;
@@ -59,7 +61,7 @@
     color: #342e1f;
 }
 .theme_word_normal {
-    color: #333;
+    color: #888;
 }
 .theme_word_red {
     color: #ff3200;
