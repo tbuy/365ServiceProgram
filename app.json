@@ -1,0 +1,41 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/user/user",
+    "pages/mobileLogin/mobileLogin",
+    "pages/logout/logout",
+    "pages/orderContent/orderContent"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "365到家",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#666",
+    "selectedColor": "#b4282d",
+    "backgroundColor": "#fff",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "找工作",
+        "iconPath": "/images/un_home.png",
+        "selectedIconPath": "/images/home.png"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "text": "我的",
+        "iconPath": "/images/un_user.png",
+        "selectedIconPath": "images/user.png"
+      }
+    ]
+  },
+    "networkTimeout": {
+      "request": 10000,
+      "downloadFile": 10000
+    },
+    "debug": true,
+  "sitemapLocation": "sitemap.json"
+}

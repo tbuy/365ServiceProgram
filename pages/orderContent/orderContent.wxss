@@ -1,0 +1,29 @@
+.order {
+  padding: 20rpx 40rpx;
+  background-color: #fff;
+  margin-top: 20rpx;
+}
+.top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.title {
+  width: 70%;
+  font-weight: 700;
+  line-height: 70rpx;
+  margin-bottom: 20rpx;
+}
+
+.price {
+  line-height: 70rpx;
+}
+
+.public_title{
+margin-top: 40rpx;
+}
+
+.public_text{
+margin-top: 30rpx;
+}
+

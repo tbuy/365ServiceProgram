@@ -1,0 +1,32 @@
+.list {
+  height: 100vh;
+  overflow: auto;
+}
+
+.item {
+  padding: 20rpx 40rpx;
+  background-color: #fff;
+  margin-top: 20rpx;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.title {
+  width: 70%;
+  font-weight: 700;
+  line-height: 70rpx;
+  margin-bottom: 20rpx;
+}
+
+.price {
+  line-height: 70rpx;
+}
+
+.public-text {
+  width: 100%;
+  line-height: 50rpx;
+  height: 50rpx;
+}
