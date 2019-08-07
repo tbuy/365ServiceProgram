@@ -22,11 +22,14 @@
 .login {
   background-color: rgba(0,0,0,0);
   color: #fff;
-  border: 0 none;
+}
+.login:after {
+   border: 0 none;
 }
 .name {
   margin-left: 30rpx;
   margin-top: 60rpx;
+  color: #fff;
 }
 .edit {
   position: absolute;
@@ -35,12 +38,12 @@
 }
 .logout {
   margin-top: 20rpx;
-  border: 1px solid #ccc;
-  color: #ccc;
-  width: 150rpx;
-  height: 50rpx;
+  border: 1px solid #f5f5f5;
+  color: #f5f5f5;
+  width: 140rpx;
+  height: 40rpx;
   text-align: center;
-  line-height: 50rpx;
+  line-height: 40rpx;
   border-radius: 10rpx;
 }
 

@@ -1,12 +1,17 @@
 <wxs src="./../filter.wxs" module="filter" />
 <view class="list theme_bgColor2 theme_word_deep theme_wordSize_small">
-
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <block wx:for="{{imgUrls}}" wx:key="{{item.id}}">
+      <swiper-item>
+        <image src="{{item}}" class="slide-image" />
+      </swiper-item>
+    </block>
+  </swiper>
   <view class='item' wx:for="{{list}}" wx:key="{{item.id}}" bindtap='goItem' data-id="{{item.id}}">
     <view class='top'>
       <view class='title ellipsis theme_wordSize_big'>{{item.work_type}}</view>
       <view class='price theme_word_red theme_wordSize_normal'>{{item.wage}}元</view>
     </view>
-
     <view class='public-text ellipsis theme_word_normal'>工作时间： {{item.service_duration}}</view>
     <view class='public-text ellipsis theme_word_normal'>工作地点： {{item.service_address}}</view>
     <view class='public-text ellipsis theme_word_normal'>{{ filter.formatDate(item.created_at) }} 发布</view>
