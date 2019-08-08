@@ -8,9 +8,10 @@ Page({
    */
   data: {
     list: [],
+    // 分页
     lastId: 0,
     isLast: true,
-    pageNumber: 10,
+    pageNumber: 5,
     //轮播
     imgUrls: [
       'https://images.unsplash.com/photo-1551334787-21e6bd3ab135?w=640',
@@ -22,7 +23,9 @@ Page({
     //时间间隔
     interval: 5000,
     //滑动时长
-    duration: 1000
+    duration: 400,
+    height: '',
+
   },
   getOrderList(lastId) {
     wx.request({
@@ -39,9 +42,9 @@ Page({
         if (res.data.code == 0) {
           let _data = res.data.data;
           this.setData({
-            list: _data.data,
+            list: this.data.list.concat(_data.data),
             lastId: _data.lastId,
-            isLast: _data.isLast
+            isLast: _data.isLast,
           })
         }
       },
@@ -58,22 +61,25 @@ Page({
   upper(e) {
     wx.startPullDownRefresh()
   },
-  lower: function(e) {
-    console.log('更多')
-    try {
-      if (!this.data.isLast) {
-        this.getOrderList(this.data.lastId)
-      }
-    } catch (e) {
-
+  lower() {
+    if (!this.data.isLast){
+      this.getOrderList(this.data.lastId)
+    }else{
+      app.showInfo('没有更多')
     }
+  
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-
-
+    wx.getSystemInfo({
+      success: (res) => {
+        this.setData({
+          height: res.windowHeight
+        })
+      }
+    })
   },
 
   /**
