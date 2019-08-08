@@ -7,12 +7,27 @@ Page({
    * 页面的初始数据
    */
   data: {
-    list:[],
+    list: [],
+    // 分页
     lastId: 0,
     isLast: true,
-    pageNumber: 10
+    pageNumber: 5,
+    //轮播
+    imgUrls: [
+      'https://images.unsplash.com/photo-1551334787-21e6bd3ab135?w=640',
+      'https://images.unsplash.com/photo-1551214012-84f95e060dee?w=640',
+    ],
+    //轮播点
+    indicatorDots: true,
+    autoplay: false,
+    //时间间隔
+    interval: 5000,
+    //滑动时长
+    duration: 400,
+    height: '',
+
   },
-  getOrderList(lastId){
+  getOrderList(lastId) {
     wx.request({
       url: apiPath.getOrderList,
       method: 'get',
@@ -27,9 +42,9 @@ Page({
         if (res.data.code == 0) {
           let _data = res.data.data;
           this.setData({
-            list: _data.data,
+            list: this.data.list.concat(_data.data),
             lastId: _data.lastId,
-            isLast: _data.isLast
+            isLast: _data.isLast,
           })
         }
       },
@@ -38,7 +53,7 @@ Page({
       }
     })
   },
-  goItem(e){
+  goItem(e) {
     wx.navigateTo({
       url: "/pages/orderContent/orderContent?id=" + e.currentTarget.dataset.id,
     })
@@ -46,39 +61,42 @@ Page({
   upper(e) {
     wx.startPullDownRefresh()
   },
-  lower: function (e) {
-    console.log('更多')
-    try {
-      if (!this.data.isLast) {
-        this.getOrderList(this.data.lastId)
-      }
-    } catch (e) {
-
+  lower() {
+    if (!this.data.isLast){
+      this.getOrderList(this.data.lastId)
+    }else{
+      app.showInfo('没有更多')
     }
+  
   },
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
- 
-
+  onLoad: function(options) {
+    wx.getSystemInfo({
+      success: (res) => {
+        this.setData({
+          height: res.windowHeight
+        })
+      }
+    })
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
+  onReady: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
+  onShow: function() {
 
-    try{
+    try {
       this.getOrderList(0)
-    }catch(e){
+    } catch (e) {
 
     }
   },
@@ -86,35 +104,41 @@ Page({
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {
+  onHide: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {
+  onUnload: function() {
 
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {
-
+  onPullDownRefresh: function() {
+    console.log(44)
+    app.showLoading()
+    setTimeout(()=>{
+      wx.stopPullDownRefresh()
+      console.log(55)
+    },500)
+    app.hideLoading(500)
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
-
+  onReachBottom: function() {
+    console.log(111)
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
+  onShareAppMessage: function() {
 
   }
 })

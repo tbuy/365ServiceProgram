@@ -16,18 +16,18 @@ Page({
     } else if (e.detail.value.captcha == '' || e.detail.value.captcha < 6) {
       app.showInfo('请输入正确验证码')
     } else {
-      // app.globalLogin(e.detail.value.phone, e.detail.value.captcha, () => {
-      //   app.showInfo('登录成功')
-      //   wx.reLaunch({
-      //     url: "/pages/user/user"
-      //   })
-      // })
-      app.globalLogin(13998836590, 111111,()=>{
+      app.globalLogin(e.detail.value.phone, e.detail.value.captcha, () => {
         app.showInfo('登录成功')
         wx.reLaunch({
           url: "/pages/user/user"
         })
       })
+      // app.globalLogin(13998836590, 111111,()=>{
+      //   app.showInfo('登录成功')
+      //   wx.reLaunch({
+      //     url: "/pages/user/user"
+      //   })
+      // })
     }
   },
   getCode() {

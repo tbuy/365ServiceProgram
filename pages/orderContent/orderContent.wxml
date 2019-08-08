@@ -13,5 +13,5 @@
   <view class='public_title theme_wordSize_normal'>详细要求</view>
   <view class='public_text theme_word_normal'>{{order.order_details}}</view>
 
-  <button class='public_button_big theme_btn theme_wordSize_normal' style='margin-top: 100rpx;' bindtap='call'>立即下单</button>
+  <button class='public_button_big theme_btn theme_wordSize_normal' style='margin-top: 100rpx;' bindtap='call'>立即抢单</button>
 </view>
