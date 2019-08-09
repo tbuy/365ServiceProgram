@@ -15,4 +15,5 @@ API，他的运行环境和 javascript 是隔离的
 5 登录访问权限
 6 设置分享
 7 订单排序
+8 title loading状态
 
