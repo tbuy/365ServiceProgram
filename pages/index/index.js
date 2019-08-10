@@ -1,5 +1,6 @@
 const app = getApp();
 const apiPath = require('../../config/apiPath.js');
+
 // pages/index/index.js
 Page({
 
@@ -28,6 +29,7 @@ Page({
 
   },
   getOrderList(lastId) {
+    wx.showNavigationBarLoading()
     wx.request({
       url: apiPath.getOrderList,
       method: 'get',
@@ -46,6 +48,7 @@ Page({
             lastId: _data.lastId,
             isLast: _data.isLast,
           })
+          wx.hideNavigationBarLoading()
         }
       },
       fail: (err) => {
@@ -72,7 +75,7 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function(options) {
+  onLoad:  function(options) {
     wx.getSystemInfo({
       success: (res) => {
         this.setData({
@@ -80,6 +83,7 @@ Page({
         })
       }
     })
+     this.getOrderList(0)
   },
 
   /**
@@ -94,11 +98,6 @@ Page({
    */
   onShow: function() {
 
-    try {
-      this.getOrderList(0)
-    } catch (e) {
-
-    }
   },
 
   /**

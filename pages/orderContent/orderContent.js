@@ -10,6 +10,7 @@ Page({
     id: 1
   },
   getOrder(id) {
+    wx.showNavigationBarLoading()
     wx.request({
       url: apiPath.getOrder,
       method: 'get',
@@ -26,6 +27,7 @@ Page({
           this.setData({
             order: _data
           })
+          wx.hideNavigationBarLoading()
         }
       },
       fail: (err) => {
