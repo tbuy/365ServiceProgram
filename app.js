@@ -8,7 +8,7 @@ App({
         wx.showToast({
             title: title,
             icon: icon,
-            duration: 1500,
+            duration: 1000,
             mask: true
 
         })
