@@ -7,7 +7,7 @@
     "pages/orderContent/orderContent"
   ],
   "window": {
-    "backgroundTextStyle": "light",
+    "backgroundTextStyle": "dark",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "365到家",
     "navigationBarTextStyle": "black"
@@ -15,7 +15,7 @@
   "tabBar": {
     "color": "#666",
     "selectedColor": "#b4282d",
-    "backgroundColor": "#fff",
+    "backgroundColor": "pink",
     "borderStyle": "white",
     "list": [
       {
