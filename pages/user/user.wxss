@@ -31,11 +31,7 @@
   margin-top: 60rpx;
   color: #fff;
 }
-.edit {
-  position: absolute;
-  right: 60rpx;
-  top: 60rpx;
-}
+
 .logout {
   margin-top: 20rpx;
   border: 1px solid #f5f5f5;
