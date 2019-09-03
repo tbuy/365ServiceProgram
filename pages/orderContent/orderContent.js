@@ -37,7 +37,7 @@ Page({
   },
   call(){
     wx.makePhoneCall({
-      phoneNumber: this.data.order.hold_manager_phone
+      phoneNumber: this.data.order.agent_manager_phone
     })
 
   },
