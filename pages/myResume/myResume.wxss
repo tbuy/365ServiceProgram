@@ -1,0 +1,13 @@
+.public {
+    border-bottom: 1rpx solid #f5f5f5;
+    box-shadow: 5rpx 10rpx 10rpx #f5f5f5;
+   color: rgb(87, 87, 87);
+   font-size: 30rpx;
+}
+.public view {
+  padding: 20rpx 40rpx;
+}
+.pub-title {
+  border-bottom: 1rpx solid #f5f5f5;
+  font-size: 34rpx;
+}
