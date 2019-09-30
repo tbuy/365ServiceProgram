@@ -1,0 +1,18 @@
+<view class="intention">
+  <view class="public">
+    <view class="pub-title">工作时段</view>
+    <view class="pub-item">
+      <view class="item {{item.isSelect?'isSelected':''}}" wx:for="{{timeList}}" wx:key="{{item.id}}" bindtap="selected" data-id="{{item.id}}">{{item.value}}</view>
+    </view>
+  </view>
+  <view>
+    <view class="public">
+      <view class="pub-title">工作内容</view>
+      <view class="pub-item">
+        <view class="item {{item.isSelect?'isSelected':''}}" wx:for="{{contentList}}" wx:key="{{item.id}}" bindtap="selectedContent" data-id="{{item.id}}">{{item.value}}</view>
+      </view>
+    </view>
+  </view>
+    <view class='save' bindtap="save">保存</view>
+
+</view>

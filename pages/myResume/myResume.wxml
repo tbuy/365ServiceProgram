@@ -9,11 +9,19 @@
     <view>17594937483</view>
   </view>
   <view class="public">
-    <view class="pub-title">自我描述</view>
+    <view class="pub-title">证件证书</view>
     <view>请</view>
   </view>
   <view class="public">
+    <view class="pub-title">自我介绍</view>
+    <view>多多岛</view>
+  </view>
+  <view class="public">
     <view class="pub-title">工作经历</view>
+    <view>多多岛</view>
+  </view>
+    <view class="public">
+    <view class="pub-title">家庭情况</view>
     <view>多多岛</view>
   </view>
 </view>

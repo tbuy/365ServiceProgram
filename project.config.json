@@ -41,12 +41,19 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 0,
+			"current": 1,
 			"list": [
 				{
 					"id": -1,
 					"name": "简历",
 					"pathName": "pages/myResume/myResume",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "求职意向",
+					"pathName": "pages/intention/intention",
 					"scene": null
 				}
 			]

@@ -9,7 +9,7 @@ Page({
       id: 1,
       iconClass: 'icon-order',
       title: '求职意向',
-      router: ''
+      router: '/pages/intention/intention'
     }, {
       id: 2,
       iconClass: 'icon-resume',

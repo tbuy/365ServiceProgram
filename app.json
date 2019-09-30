@@ -4,7 +4,8 @@
     "pages/user/user",
     "pages/mobileLogin/mobileLogin",
     "pages/orderContent/orderContent",
-    "pages/myResume/myResume"
+    "pages/myResume/myResume",
+    "pages/intention/intention"
   ],
   "window": {
     "backgroundTextStyle": "dark",
