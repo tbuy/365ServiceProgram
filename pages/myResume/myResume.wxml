@@ -1,27 +1,57 @@
 <view>
   <view class="public">
-    <view class="pub-title">求职意向</view>
-    <view>告诉我们你想找到什么工作</view>
+    <view class="pub-title">
+      <view>求职意向</view>
+      <view class="right" bindtap="goIntention">
+        <view>去修改</view>
+        <view class='iconfont icon-enter icon-color item-right'></view>
+      </view>
+    </view>
+    <view class="pub-content">告诉我们你想找到什么工作</view>
   </view>
-  <view class="public">
-    <view>玩哈哈哈</view>
+  <view class="public user">
+    <view>王哈哈</view>
     <view>女/沈阳市/5年</view>
     <view>17594937483</view>
   </view>
   <view class="public">
-    <view class="pub-title">证件证书</view>
-    <view>请</view>
+    <view class="pub-title">
+      <view>证件证书</view>
+      <view class="right">
+        <view>去修改</view>
+        <view class='iconfont icon-enter icon-color item-right'></view>
+      </view>
+    </view>
+    <view class="pub-content">请</view>
   </view>
   <view class="public">
-    <view class="pub-title">自我介绍</view>
-    <view>多多岛</view>
+    <view class="pub-title">
+      <view>自我介绍</view>
+      <view class="right" bindtap="goIntroduce">
+        <view>去修改</view>
+        <view class='iconfont icon-enter icon-color item-right'></view>
+      </view>
+    </view>
+    <view class="pub-content">多多岛</view>
   </view>
   <view class="public">
-    <view class="pub-title">工作经历</view>
-    <view>多多岛</view>
+    <view class="pub-title">
+      <view>工作经历</view>
+      <view class="right" bindtap="goExperience">
+        <view>去修改</view>
+        <view class='iconfont icon-enter icon-color item-right'></view>
+      </view>
+    </view>
+    <view class="pub-content">多多岛</view>
   </view>
-    <view class="public">
-    <view class="pub-title">家庭情况</view>
-    <view>多多岛</view>
+  <view class="public">
+    <view class="pub-title">
+      <view>紧急联系人</view>
+      <view class="right" bindtap="goFamily">
+        <view>去修改</view>
+        <view class='iconfont icon-enter icon-color item-right'></view>
+      </view>
+    </view>
+    <view class="pub-content">多多岛</view>
   </view>
 </view>

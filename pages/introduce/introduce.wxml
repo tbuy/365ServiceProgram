@@ -1,0 +1,16 @@
+<view class="intention">
+  <view class="public">
+    <view class="pub-title">性格特点</view>
+    <view class="pub-item">
+      <view class="item {{item.isSelect?'isSelected':''}}" wx:for="{{list}}" wx:key="{{item.id}}" bindtap="selected" data-id="{{item.id}}">{{item.value}}</view>
+    </view>
+  </view>
+  <view>
+    <view class="public">
+      <view class="pub-title">自我介绍</view>
+      <textarea placeholder="请介绍自己，描述您擅长的事情" auto-focus value="{{value}}" placeholder-class="placeholderStyle"/>
+    </view>
+  </view>
+    <view class='save' bindtap="save">保存</view>
+
+</view>

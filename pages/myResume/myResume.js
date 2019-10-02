@@ -7,7 +7,26 @@ Page({
   data: {
 
   },
-
+  goIntention(){
+   wx.navigateTo({
+     url: '/pages/intention/intention',
+   }) 
+  },
+  goIntroduce(){
+    wx.navigateTo({
+      url: '/pages/introduce/introduce',
+    })
+  },
+  goExperience() {
+    wx.navigateTo({
+      url: '/pages/experience/experience',
+    })
+  },
+  goFamily() {
+    wx.navigateTo({
+      url: '/pages/family/family',
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

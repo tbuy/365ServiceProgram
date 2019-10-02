@@ -1,0 +1,15 @@
+<view class="intention">
+  <view class="public">
+    <view class="pub-title">工作经历</view>
+    <view class="pub-item">
+      <view class="item {{item.isSelect?'isSelected':''}}" wx:for="{{list}}" wx:key="{{item.id}}" bindtap="selected" data-id="{{item.id}}">{{item.value}}</view>
+    </view>
+  </view>
+  <view>
+    <view class="public">
+      <view class="pub-title">其他</view>
+      <textarea placeholder="其他工作经历" auto-focus value="{{value}}" placeholder-class="placeholderStyle"/>
+    </view>
+  </view>
+  <view class='save' bindtap="save">保存</view>
+</view>

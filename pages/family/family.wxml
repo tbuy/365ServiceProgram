@@ -1,0 +1,16 @@
+<view class="intention">
+  <view class="public">
+    <view class="pub-title">紧急联系人</view>
+    <view class="pub-item">
+      <view class="item {{item.isSelect?'isSelected':''}}" wx:for="{{list}}" wx:key="{{item.id}}" bindtap="selected" data-id="{{item.id}}">{{item.value}}</view>
+    </view>
+  </view>
+  <view>
+    <view class="public">
+      <view class="pub-title">联系方式</view>
+      <textarea placeholder="请填写联系人姓名及电话" auto-focus value="{{value}}" placeholder-class="placeholderStyle"/>
+    </view>
+  </view>
+    <view class='save' bindtap="save">保存</view>
+
+</view>

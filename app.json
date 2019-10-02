@@ -5,7 +5,10 @@
     "pages/mobileLogin/mobileLogin",
     "pages/orderContent/orderContent",
     "pages/myResume/myResume",
-    "pages/intention/intention"
+    "pages/intention/intention",
+    "pages/introduce/introduce",
+    "pages/experience/experience",
+    "pages/family/family"
   ],
   "window": {
     "backgroundTextStyle": "dark",

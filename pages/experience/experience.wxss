@@ -28,6 +28,18 @@
   border-radius: 60rpx;
 
 }
+textarea {
+  margin-top: 20rpx;
+  font-size: 30rpx;
+  padding: 20rpx;
+  box-sizing: border-box;
+  width: auto;
+  background-color: #f5f5f5;
+}
+.placeholderStyle {
+  font-size: 30rpx;
+  color: #ccc;
+}
 .save {
   width: 80%;
   border: 0 none;
@@ -45,3 +57,4 @@
   color: #ff7832;
   border-color: #ff7832;
 }
+
