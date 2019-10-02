@@ -5,30 +5,35 @@ Page({
    * 页面的初始数据
    */
   data: {
-    menuList: [ {
+    menuList: [{
       id: 1,
+      iconClass: 'icon-order',
       title: '求职意向',
-      router: ''
+      router: '/pages/intention/intention'
     }, {
       id: 2,
-      title: '我的抢单',
-      router: ''
+      iconClass: 'icon-resume',
+      title: '我的简历',
+      router: '/pages/myResume/myResume'
     }, {
       id: 3,
+      iconClass: 'icon-about',
       title: '服务协议',
       router: ''
     }, {
       id: 4,
+      iconClass: 'icon-customer',
       title: '帮助中心',
       router: ''
-      }, {
-        id: 5,
-        title: '建议反馈',
-        router: ''
-      }],
+    }, {
+      id: 5,
+      iconClass: 'icon-opinion',
+      title: '建议反馈',
+      router: ''
+    }],
     isLogin: false,
     userName: '',
-    icon:''
+    icon: ''
   },
   //获取用户信息
   bindGetUserInfo(e) {
@@ -37,19 +42,19 @@ Page({
       wx.navigateTo({
         url: '/pages/mobileLogin/mobileLogin',
       })
-    }else{
+    } else {
       app.showInfo('您已拒绝授权，请重新点击并登录')
     }
   },
   //跳页
   goItem(e) {
-    if (!this.data.isLogin){
-      if (e.currentTarget.dataset.id == 1 || e.currentTarget.dataset.id == 2){
-        app.showInfo('请先登录',)
+    if (!this.data.isLogin) {
+      if (e.currentTarget.dataset.id == 1 || e.currentTarget.dataset.id == 2) {
+        app.showInfo('请先登录')
       } else {
         app.showInfo('敬请期待')
       }
-    }else{
+    } else {
       if (e.currentTarget.dataset.router) {
         wx.navigateTo({
           url: e.currentTarget.dataset.router,
@@ -64,15 +69,12 @@ Page({
   },
   //退出登录
   logout() {
-    wx.navigateTo({
-      url: '/pages/logout/logout',
-    })
-  },
-  //编辑资料
-  edit() {
-    wx.navigateTo({
-      url: '',
-    })
+    wx.clearStorageSync()
+    app.showLoading()
+    setTimeout(() => {
+      app.hideLoading(0)
+      wx.reLaunch({ url: '/pages/user/user' })
+    }, 800)
   },
   /**
    * 生命周期函数--监听页面加载
@@ -91,7 +93,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    try{
+    try {
       app.checkLogin();
       if (wx.getStorageSync('isLogin')) {
         this.setData({
@@ -105,11 +107,11 @@ Page({
         console.log(_userInfo)
 
       };
-    }catch(e){
+    } catch (e) {
 
     }
-   
-    
+
+
   },
 
   /**
@@ -147,3 +149,6 @@ Page({
 
   }
 })
+
+
+
