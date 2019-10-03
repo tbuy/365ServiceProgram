@@ -9,7 +9,7 @@
 }
 
 .title {
-  width: 70%;
+  width: 50%;
   font-weight: 700;
   line-height: 70rpx;
   margin-bottom: 20rpx;

@@ -1,7 +1,7 @@
 <view class='order theme_wordSize_small'>
   <view class='top'>
     <view class='title ellipsis theme_wordSize_big theme_word_deep'>{{order.work_type}}</view>
-    <view class='price theme_word_red theme_wordSize_normal'>{{order.wage}}元</view>
+    <view class='price theme_word_red theme_wordSize_normal'>{{order.wage}}</view>
   </view>
 
   <view class='public_title theme_wordSize_normal'>服务时间</view>
