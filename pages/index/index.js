@@ -72,6 +72,24 @@ Page({
     }
   
   },
+  getAdPosition(){
+    wx.request({
+      url: apiPath.getAdPosition,
+      method: 'get',
+      header: {
+        'Content-Type': 'application/json',
+      },
+      success: (res) => {
+        if (res.data.code == 0) {
+          let _data = res.data.data;
+          console.log(_data);
+        }
+      },
+      fail: (err) => {
+        app.showInfo(res.data.message)
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -84,6 +102,7 @@ Page({
       }
     })
      this.getOrderList(0)
+    this.getAdPosition()
   },
 
   /**

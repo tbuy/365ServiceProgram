@@ -32,4 +32,9 @@ module.exports = {
   getCategory: apiPath + "/user/service/getCategory",
 
 
+
+  //广告位
+  getAdPosition: apiPath + "/staff/common/getAdPosition",
+
+
 }

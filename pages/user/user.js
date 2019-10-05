@@ -18,7 +18,7 @@ Page({
     }, {
       id: 3,
       iconClass: 'icon-about',
-      title: '服务协议',
+      title: '阿姨手册',
       router: ''
     }, {
       id: 4,

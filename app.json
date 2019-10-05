@@ -8,7 +8,8 @@
     "pages/intention/intention",
     "pages/introduce/introduce",
     "pages/experience/experience",
-    "pages/family/family"
+    "pages/family/family",
+    "pages/videoList/videoList"
   ],
   "window": {
     "backgroundTextStyle": "dark",
@@ -27,6 +28,12 @@
         "text": "找工作",
         "iconPath": "/images/un_home.png",
         "selectedIconPath": "/images/home.png"
+      },
+      {
+        "pagePath": "pages/videoList/videoList",
+        "text": "教程",
+        "iconPath": "/images/un_user.png",
+        "selectedIconPath": "images/user.png"
       },
       {
         "pagePath": "pages/user/user",
