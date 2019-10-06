@@ -14,15 +14,12 @@ Page({
     isLast: true,
     pageNumber: 5,
     //轮播
-    imgUrls: [
-      'https://images.unsplash.com/photo-1551334787-21e6bd3ab135?w=640',
-      'https://images.unsplash.com/photo-1551214012-84f95e060dee?w=640',
-    ],
+    bannerImage: [],
     //轮播点
     indicatorDots: true,
-    autoplay: false,
+    autoplay: true,
     //时间间隔
-    interval: 5000,
+    interval: 3000,
     //滑动时长
     duration: 400,
     height: '',
@@ -65,35 +62,22 @@ Page({
     wx.startPullDownRefresh()
   },
   lower() {
-    if (!this.data.isLast){
+    if (!this.data.isLast) {
       this.getOrderList(this.data.lastId)
-    }else{
+    } else {
       app.showInfo('没有更多')
     }
-  
+
   },
-  getAdPosition(){
-    wx.request({
-      url: apiPath.getAdPosition,
-      method: 'get',
-      header: {
-        'Content-Type': 'application/json',
-      },
-      success: (res) => {
-        if (res.data.code == 0) {
-          let _data = res.data.data;
-          console.log(_data);
-        }
-      },
-      fail: (err) => {
-        app.showInfo(res.data.message)
-      }
-    })
+  goAdPositionContent(e) {
+    if (e.currentTarget.dataset.item) {
+      app.goAdPositionContent(e.currentTarget.dataset.item)
+    }
   },
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad:  function(options) {
+  onLoad: function(options) {
     wx.getSystemInfo({
       success: (res) => {
         this.setData({
@@ -101,15 +85,20 @@ Page({
         })
       }
     })
-     this.getOrderList(0)
-    this.getAdPosition()
+    this.getOrderList(0)
+    app.getAdPosition()
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function() {
-
+    let _adPosition = JSON.parse(wx.getStorageSync('adPosition'))
+    if (_adPosition) {
+      this.setData({
+        bannerImage: _adPosition['S000007']['resource'],
+      })
+    }
   },
 
   /**
@@ -139,10 +128,10 @@ Page({
   onPullDownRefresh: function() {
     console.log(44)
     app.showLoading()
-    setTimeout(()=>{
+    setTimeout(() => {
       wx.stopPullDownRefresh()
       console.log(55)
-    },500)
+    }, 500)
     app.hideLoading(500)
   },
 

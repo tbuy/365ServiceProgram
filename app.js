@@ -163,6 +163,38 @@ App({
         });
 
     },
+  //获取广告位
+  getAdPosition() {
+    wx.request({
+      url: apiPath.getAdPosition,
+      method: 'get',
+      header: {
+        'Content-Type': 'application/json',
+      },
+      success: (res) => {
+        if (res.data.code == 0) {
+          let _data = res.data.data;
+          this.globalData.adPosition = _data
+          wx.setStorageSync('adPosition', JSON.stringify(_data));
+        }
+      },
+      fail: (err) => {
+        this.showInfo(res.data.message)
+      }
+    })
+  },
+  //广告位跳转
+  goAdPositionContent(ad) {
+    if (ad.jump_type == 'category') {
+      this.showInfo('敬请期待')
+    } else if (ad.jump_type == 'activity') {
+      wx.navigateTo({
+        url: '/pages/activity/activity?url=' + ad.activity_url,
+      })
+    } else {
+      this.showInfo('敬请期待')
+    }
+  },
     //全局数据
     globalData: {
         //权限详情

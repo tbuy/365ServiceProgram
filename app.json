@@ -9,7 +9,8 @@
     "pages/introduce/introduce",
     "pages/experience/experience",
     "pages/family/family",
-    "pages/videoList/videoList"
+    "pages/videoList/videoList",
+    "pages/activity/activity",
   ],
   "window": {
     "backgroundTextStyle": "dark",
@@ -43,10 +44,10 @@
       }
     ]
   },
-    "networkTimeout": {
-      "request": 10000,
-      "downloadFile": 10000
-    },
-    "debug": true,
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true,
   "sitemapLocation": "sitemap.json"
 }
