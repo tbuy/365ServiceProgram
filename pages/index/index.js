@@ -1,7 +1,6 @@
 const app = getApp();
 const apiPath = require('../../config/apiPath.js');
 
-// pages/index/index.js
 Page({
 
   /**

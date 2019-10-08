@@ -10,7 +10,7 @@
     "pages/experience/experience",
     "pages/family/family",
     "pages/videoList/videoList",
-    "pages/activity/activity",
+    "pages/activity/activity"
   ],
   "window": {
     "backgroundTextStyle": "dark",
