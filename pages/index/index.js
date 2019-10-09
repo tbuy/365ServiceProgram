@@ -22,6 +22,7 @@ Page({
     //滑动时长
     duration: 400,
     height: '',
+    adPosition: null
 
   },
   getOrderList(lastId) {
@@ -68,6 +69,28 @@ Page({
     }
 
   },
+  getAdPosition() {
+    wx.request({
+      url: apiPath.getAdPosition,
+      method: 'get',
+      header: {
+        'Content-Type': 'application/json',
+      },
+      success: (res) => {
+        if (res.data.code == 0) {
+          let _data = res.data.data;
+          this.setData({
+            adPosition: _data,
+            bannerImage: _data['S000007']['resource'],
+          })
+          wx.setStorageSync('adPosition', JSON.stringify(_data));
+        }
+      },
+      fail: (err) => {
+        app.showInfo(res.data.message)
+      }
+    })
+  },
   goAdPositionContent(e) {
     if (e.currentTarget.dataset.item) {
       app.goAdPositionContent(e.currentTarget.dataset.item)
@@ -76,7 +99,7 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function(options) {
+  onLoad: function (options) {
     wx.getSystemInfo({
       success: (res) => {
         this.setData({
@@ -84,67 +107,70 @@ Page({
         })
       }
     })
-    this.getOrderList(0)
-    app.getAdPosition()
+
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function() {
-    let _adPosition = JSON.parse(wx.getStorageSync('adPosition'))
-    if (_adPosition) {
-      this.setData({
-        bannerImage: _adPosition['S000007']['resource'],
-      })
-    }
+  onReady: function () {
+
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function() {
-
+  onShow: function () {
+    this.setData({
+      list: [],
+      lastId: 0,
+      isLast: false,
+    })
+    this.getOrderList(0)
+    this.getAdPosition()
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function() {
+  onHide: function () {
 
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function() {
+  onUnload: function () {
 
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function() {
+  onPullDownRefresh: function () {
     console.log(44)
     app.showLoading()
     setTimeout(() => {
       wx.stopPullDownRefresh()
       console.log(55)
-    }, 500)
-    app.hideLoading(500)
+    }, 200)
+    app.hideLoading(200)
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function() {
+  onReachBottom: function () {
     console.log(111)
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function() {
+  onShareAppMessage: function () {
 
+  },
+  onTabItemTap(item) {
+    this.getOrderList(0)
   }
 })

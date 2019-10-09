@@ -31,12 +31,6 @@
         "selectedIconPath": "/images/home.png"
       },
       {
-        "pagePath": "pages/videoList/videoList",
-        "text": "教程",
-        "iconPath": "/images/un_user.png",
-        "selectedIconPath": "images/user.png"
-      },
-      {
         "pagePath": "pages/user/user",
         "text": "我的",
         "iconPath": "/images/un_user.png",

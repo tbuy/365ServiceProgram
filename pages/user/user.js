@@ -14,7 +14,7 @@ Page({
       id: 2,
       iconClass: 'icon-resume',
       title: '我的简历',
-      router: '/pages/myResume/myResume'
+      router: ''
     }, {
       id: 3,
       iconClass: 'icon-about',
