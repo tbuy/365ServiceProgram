@@ -19,16 +19,22 @@
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
-    "color": "#666",
-    "selectedColor": "#b4282d",
-    "backgroundColor": "pink",
-    "borderStyle": "white",
+    "color": "#cdcdcd",
+    "selectedColor": "#ff7832",
+    "backgroundColor": "#fff",
+    "borderStyle": "black",
     "list": [
       {
         "pagePath": "pages/index/index",
         "text": "找工作",
         "iconPath": "/images/un_home.png",
         "selectedIconPath": "/images/home.png"
+      },
+      {
+        "pagePath": "pages/videoList/videoList",
+        "text": "教程",
+        "iconPath": "/images/un_video.png",
+        "selectedIconPath": "images/video.png"
       },
       {
         "pagePath": "pages/user/user",
