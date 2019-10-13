@@ -50,6 +50,7 @@ App({
    * callback 成功的回调函数
    */
   globalLogin(phone, captcha, callback = () => { }) {
+    wx.showLoading();
     wx.login({
       success: (loginRes) => {
         console.log('loginRes', loginRes)
@@ -104,6 +105,8 @@ App({
           this.showInfo('登录失败');
           console.log(333, err)
         }
+
+        wx.hideLoading()
       },
       fail: (err) => {
         this.showInfo('登录失败');

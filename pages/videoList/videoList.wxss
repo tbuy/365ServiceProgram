@@ -1,1 +1,42 @@
-/* pages/videoList/videoList.wxss */
+.list {
+  height: 100vh;
+  overflow: auto;
+  color: rgb(87, 87, 87);
+}
+
+.item {
+  padding: 30rpx 40rpx;
+  background-color: #fff;
+  border-bottom: 1rpx solid #f5f5f5;
+  box-shadow: 5rpx 10rpx 10rpx #f5f5f5;
+  margin-bottom: 10rpx;
+  font-size: 32rpx;
+  display: flex;
+}
+
+.leftImage {
+  width: 250rpx;
+  height: 150rpx;
+  background-color: pink;
+  border-radius: 10rpx;
+  overflow: hidden;
+}
+
+image {
+  width: 250rpx;
+  height: 150rpx;
+}
+
+.rightContent{
+  font-size: 26rpx;
+  width: 400rpx;
+  margin-left: 20rpx;
+  padding: 10rpx 0;
+}
+
+.name {
+  font-size: 30rpx;
+  height: 80rpx;
+  margin-bottom: 10rpx;
+  overflow: hidden;
+}

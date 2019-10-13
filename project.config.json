@@ -41,7 +41,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 1,
+			"current": 3,
 			"list": [
 				{
 					"id": -1,
@@ -54,6 +54,21 @@
 					"id": -1,
 					"name": "求职意向",
 					"pathName": "pages/intention/intention",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "视频列表",
+					"pathName": "pages/videoList/videoList",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 3,
+					"name": "视频详情",
+					"pathName": "pages/videoContent/videoContent",
+					"query": "id=17",
 					"scene": null
 				}
 			]

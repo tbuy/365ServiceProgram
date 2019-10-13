@@ -10,6 +10,7 @@
     "pages/experience/experience",
     "pages/family/family",
     "pages/videoList/videoList",
+    "pages/videoContent/videoContent",
     "pages/activity/activity"
   ],
   "window": {

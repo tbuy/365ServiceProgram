@@ -17,6 +17,8 @@ module.exports = {
 
 
 
+  //获取服务分类 get
+  getCategory: apiPath + "/user/service/getCategory",
 
   //获取订单列表(懒加载) get {lastId,pageNumber}
   getOrderList: apiPath + "/staff/order/getOrderList",
@@ -26,10 +28,16 @@ module.exports = {
 
 
 
+  //获取视频列表(懒加载) get {lastId,pageNumber}
+  getVideoList: apiPath + "/staff/common/getVideoList",
+
+  //获取单个视频 get {id}
+  getVideo: apiPath + "/staff/common/getVideo",
+
+  
 
 
-  //获取服务分类 get
-  getCategory: apiPath + "/user/service/getCategory",
+
 
 
 
