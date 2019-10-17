@@ -1,5 +1,5 @@
 <view class='video'>
-  <video id="myVideo" poster="{{video.picture_url}}" src="{{video.video_url}}" controls></video>
+  <video id="myVideo" poster="{{video.picture_url}}" src="{{video.video_src}}" controls></video>
   <view class="content">
     <view class="first">
       <view class="name">{{video.name}}</view>
@@ -7,7 +7,7 @@
     </view>
     <view class="second">
       <view class="title">简介</view>
-      <image src="{{video.picture_url}}" mode="widthFix"></image>
+      <image src="{{video.video_detail_url}}" mode="widthFix"></image>
     </view>
   </view>
 
