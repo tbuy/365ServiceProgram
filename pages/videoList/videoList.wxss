@@ -17,9 +17,10 @@
 .leftImage {
   width: 250rpx;
   height: 150rpx;
-  background-color: pink;
+  background-color: rgb(243, 243, 243);
   border-radius: 10rpx;
   overflow: hidden;
+  position: relative;
 }
 
 image {
@@ -39,4 +40,12 @@ image {
   height: 80rpx;
   margin-bottom: 10rpx;
   overflow: hidden;
+}
+.nodata-image {
+  width: 110rpx;
+  height: 90rpx;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }

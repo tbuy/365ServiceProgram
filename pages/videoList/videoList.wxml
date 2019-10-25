@@ -1,6 +1,7 @@
 <view class="list">
   <scroll-view scroll-y='true' style="height:{{height}}px" bindscrolltolower='lower'>
-    <view class='item' wx:for="{{list}}" wx:key="{{item.id}}" bindtap='goItem' data-id="{{item.id}}">
+    <view wx:if="!list.length>0">
+      <view class='item' wx:for="{{list}}" wx:key="{{item.id}}" bindtap='goItem' data-id="{{item.id}}">
         <view class="leftImage">
           <image src="{{item.picture_url}}"></image>
         </view>
@@ -8,6 +9,10 @@
           <view class="name">{{item.name}}</view>
           <view>主讲人：{{item.teacher}}</view>
         </view>
+      </view>
+    </view>
+    <view wx:else>
+      <image src="/images/nodata.png"></image>
     </view>
   </scroll-view>
 </view>
