@@ -1,21 +1,26 @@
 const app = getApp();
+const config = require('../../config/config.js');
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    menuList: [{
-      id: 1,
-      iconClass: 'icon-order',
-      title: '求职意向',
-      router: '/pages/intention/intention'
-    }, {
-      id: 2,
-      iconClass: 'icon-resume',
-      title: '我的简历',
-      router: ''
-    }, {
+    menuList: [
+    //   {
+    //   id: 1,
+    //   iconClass: 'icon-order',
+    //   title: '求职意向',
+    //   router: '/pages/intention/intention'
+    // }, 
+    // {
+    //   id: 2,
+    //   iconClass: 'icon-resume',
+    //   title: '我的简历',
+    //   router: ''
+    // }, 
+    {
       id: 3,
       iconClass: 'icon-about',
       title: '阿姨手册',
@@ -28,7 +33,7 @@ Page({
     }, {
       id: 5,
       iconClass: 'icon-opinion',
-      title: '建议反馈',
+      title: '意见反馈',
       router: ''
     }],
     isLogin: false,
@@ -51,6 +56,10 @@ Page({
     if (!this.data.isLogin) {
       if (e.currentTarget.dataset.id == 1 || e.currentTarget.dataset.id == 2) {
         app.showInfo('请先登录')
+      } else if (e.currentTarget.dataset.id == 5) {
+        wx.makePhoneCall({
+          phoneNumber: config.phone
+        })
       } else {
         app.showInfo('敬请期待')
       }
@@ -58,6 +67,10 @@ Page({
       if (e.currentTarget.dataset.router) {
         wx.navigateTo({
           url: e.currentTarget.dataset.router,
+        })
+      } else if (e.currentTarget.dataset.id == 5) {
+        wx.makePhoneCall({
+          phoneNumber: config.phone
         })
       } else {
         app.showInfo('敬请期待')

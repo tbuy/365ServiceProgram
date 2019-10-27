@@ -1,6 +1,6 @@
 <view class="list">
   <scroll-view scroll-y='true' style="height:{{height}}px" bindscrolltolower='lower'>
-    <view wx:if="!list.length>0">
+    <view wx:if="{{list.length>0}}">
       <view class='item' wx:for="{{list}}" wx:key="{{item.id}}" bindtap='goItem' data-id="{{item.id}}">
         <view class="leftImage">
           <image src="{{item.picture_url}}"></image>
@@ -11,8 +11,6 @@
         </view>
       </view>
     </view>
-    <view wx:else>
-      <image src="/images/nodata.png"></image>
-    </view>
+  <view wx:else class="nodata">暂无数据</view>
   </scroll-view>
 </view>

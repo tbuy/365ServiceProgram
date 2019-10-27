@@ -44,6 +44,7 @@ swiper {
 .slide-image {
   width: 100%;
   height: 320rpx;
+  background-color: rgb(243, 243, 243);
 }
 .sub-title {
   color: rgb(138, 138, 138);

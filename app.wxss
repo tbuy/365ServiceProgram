@@ -28,7 +28,13 @@
   height: 100rpx;
   border-radius: 50rpx;
 }
-
+/* 无数据 */
+.nodata {
+  color: rgb(114, 113, 113);
+  font-size: 34rpx;
+  text-align: center;
+  margin: 300rpx auto;
+}
 /* 省略号 */
 .ellipsis{
     display: -webkit-box;

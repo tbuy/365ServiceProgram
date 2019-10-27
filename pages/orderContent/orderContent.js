@@ -1,5 +1,6 @@
 const app = getApp();
 const apiPath = require('../../config/apiPath.js');
+const config = require('../../config/config.js')
 Page({
 
   /**
@@ -37,7 +38,7 @@ Page({
   },
   call(){
     wx.makePhoneCall({
-      phoneNumber: this.data.order.agent_manager_phone
+      phoneNumber: this.data.order.agent_manager_phone || config.phone
     })
 
   },

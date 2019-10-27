@@ -94,4 +94,7 @@ Page({
     this.getOrderList(0)
   },
 
+  onTabItemTap(item) {
+    this.getOrderList(0)
+  }
 })
