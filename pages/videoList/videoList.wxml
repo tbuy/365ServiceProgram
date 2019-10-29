@@ -1,3 +1,4 @@
+<wxs src="./../filter.wxs" module="filter" />
 <view class="list">
   <scroll-view scroll-y='true' style="height:{{height}}px" bindscrolltolower='lower'>
     <view wx:if="{{list.length>0}}">
@@ -6,8 +7,8 @@
           <image src="{{item.picture_url}}"></image>
         </view>
         <view class="rightContent">
-          <view class="name">{{item.name}}</view>
-          <view>主讲人：{{item.teacher}}</view>
+          <view class="name">{{filter.wordSubstring(item.name, 26)}}</view>
+          <view>主讲人：{{filter.wordSubstring(item.teacher, 10)}}</view>
         </view>
       </view>
     </view>

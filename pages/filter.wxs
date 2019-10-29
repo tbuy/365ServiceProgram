@@ -14,7 +14,12 @@ function formatDate(time) {
   second = second < 10 ? ('0' + second) : second;
   return y + '-' + m + '-' + d + ' ' + h + ':' + minute + ':' + second;
 }
+//截取字符串
+function wordSubstring(val,length){
+  return val.length > length ? val.substring(0, length - 1) + "..." : val;
+}
 module.exports = {
-  formatDate: formatDate 
+  formatDate: formatDate ,
+  wordSubstring: wordSubstring
 }
 
