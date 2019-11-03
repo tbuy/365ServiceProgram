@@ -11,14 +11,18 @@
     <view wx:if="{{list.length>0}}">
       <view class='item' wx:for="{{list}}" wx:key="{{item.id}}" bindtap='goItem' data-id="{{item.id}}">
         <view class='top'>
-          <view class='title ellipsis'>{{item.work_type}}</view>
-          <view class='price theme_word_red'>{{item.wage}}</view>
+          <view class='title ellipsis'>{{item.work_type || '岗位'}}</view>
+          <view class='price'>{{item.wage || '面议'}}</view>
         </view>
-        <view class='public-text ellipsis'>
-          <text class="sub-title">工作时间：</text> {{item.service_duration}}</view>
-        <view class='public-text ellipsis'>
-          <text class="sub-title">工作地点：</text> {{item.service_address}}</view>
-        <view class='public-text ellipsis'>{{ filter.formatDate(item.created_at) }} 发布</view>
+        <view class='public-text'>
+          <image src="/images/time.png"></image>
+          <text>{{item.service_duration || '面议'}}</text>
+        </view>
+        <view class='public-text'>
+          <image src="/images/area.png"></image>
+          <text>{{item.service_address || '面议'}}</text>
+        </view>
+        <view class='time'>{{ filter.formatDate(item.created_at) }} 发布</view>
       </view>
     </view>
     <view wx:else class="nodata">暂无数据</view>

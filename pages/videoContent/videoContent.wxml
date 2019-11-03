@@ -1,5 +1,5 @@
 <view class='video'>
-  <video id="myVideo" poster="{{video.picture_url}}" src="{{video.video_src}}" controls></video>
+  <video id="myVideo" poster="{{video.picture_url}}" src="{{video.video_src}}" controls bindwaiting='waitingFun' autoplay></video>
   <view class="content">
     <view class="first">
       <view class="name">{{video.name}}</view>

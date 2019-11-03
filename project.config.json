@@ -41,7 +41,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 3,
+			"current": 4,
 			"list": [
 				{
 					"id": -1,
@@ -69,6 +69,13 @@
 					"name": "视频详情",
 					"pathName": "pages/videoContent/videoContent",
 					"query": "id=17",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "求职详情",
+					"pathName": "pages/orderContent/orderContent",
+					"query": "id=5",
 					"scene": null
 				}
 			]

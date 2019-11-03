@@ -1,17 +1,20 @@
-<view class='order theme_wordSize_small'>
-  <view class='top'>
-    <view class='title ellipsis theme_wordSize_big theme_word_deep'>{{order.work_type}}</view>
-    <view class='price theme_word_red theme_wordSize_normal'>{{order.wage}}</view>
+<view class='order' wx:if="{{order.work_type}}">
+  <view class="order-card">
+    <view class='title ellipsis'>{{order.work_type}}</view>
+    <view class='price'>{{order.wage || '面议'}}</view>
+    <view class="public">
+      <view class="pub-content">
+        <image src="/images/time.png"></image>
+        <text>{{order.service_duration || '面议'}}</text>
+      </view>
+      <view class="pub-content">
+        <image src="/images/area.png"></image>
+        <text>{{order.service_address || '面议'}}</text>
+      </view>
+    </view>
   </view>
-
-  <view class='public_title theme_wordSize_normal'>服务时间</view>
-  <view class='public_text theme_word_normal'>{{order.service_duration}}</view>
-
-  <view class='public_title theme_wordSize_normal'>工作地址</view>
-  <view class='public_text theme_word_normal'>{{order.service_address}}</view>
-
-  <view class='public_title theme_wordSize_normal'>详细要求</view>
-  <view class='public_text theme_word_normal'>{{order.order_details}}</view>
-
-  <button class='public_button_big theme_btn theme_wordSize_normal' style='margin-top: 100rpx;' bindtap='call'>立即抢单</button>
+  <view class='detail-title' vx-if="{{order.order_details}}">岗位职责</view>
+  <view class='detail'>{{order.order_details}}</view>
+  <button class='public_button_big theme_btn' bindtap='call'>立即抢单</button>
 </view>
+<view wx:else class="nodata">暂无数据</view>
