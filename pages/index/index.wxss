@@ -33,7 +33,6 @@
 .public-text {
   width: 100%;
   line-height: 50rpx;
-  height: 50rpx;
 }
 
 image {
