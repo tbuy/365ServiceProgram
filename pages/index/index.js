@@ -107,13 +107,6 @@ Page({
         })
       }
     })
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
     this.setData({
       list: [],
       lastId: 0,
@@ -121,6 +114,14 @@ Page({
     })
     this.getOrderList(0)
     this.getAdPosition()
+
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+
   },
 
   /**
@@ -144,6 +145,11 @@ Page({
   },
 
   onTabItemTap(item) {
+    this.setData({
+      list: [],
+      lastId: 0,
+      isLast: false,
+    })
     this.getOrderList(0)
   }
 })
