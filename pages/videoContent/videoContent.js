@@ -11,6 +11,7 @@ Page({
   },
   getVideo(id) {
     wx.showNavigationBarLoading()
+    wx.showLoading()
     wx.request({
       url: apiPath.getVideo,
       method: 'get',
@@ -27,11 +28,14 @@ Page({
           this.setData({
             video: _data
           })
-          wx.hideNavigationBarLoading()
         }
       },
       fail: (err) => {
         app.showInfo(res.data.message)
+      },
+      complete: () => {
+        wx.hideLoading()
+        wx.hideNavigationBarLoading()
       }
     })
   },

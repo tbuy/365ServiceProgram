@@ -27,6 +27,7 @@ Page({
   },
   getOrderList(lastId) {
     wx.showNavigationBarLoading()
+    wx.showLoading()
     wx.request({
       url: apiPath.getOrderList,
       method: 'get',
@@ -45,11 +46,14 @@ Page({
             lastId: _data.lastId,
             isLast: _data.isLast,
           })
-          wx.hideNavigationBarLoading()
         }
       },
       fail: (err) => {
         app.showInfo(res.data.message)
+      },
+      complete:()=>{
+        wx.hideLoading()
+        wx.hideNavigationBarLoading()
       }
     })
   },

@@ -25,6 +25,7 @@ Page({
   },
   getOrderList(lastId) {
     wx.showNavigationBarLoading()
+    wx.showLoading()
     wx.request({
       url: apiPath.getVideoList,
       method: 'get',
@@ -43,11 +44,14 @@ Page({
             lastId: _data.lastId,
             isLast: _data.isLast,
           })
-          wx.hideNavigationBarLoading()
         }
       },
       fail: (err) => {
         app.showInfo(res.data.message)
+      },
+      complete: () => {
+        wx.hideLoading()
+        wx.hideNavigationBarLoading()
       }
     })
   },
@@ -74,26 +78,24 @@ Page({
     wx.getSystemInfo({
       success: (res) => {
         this.setData({
-          height: res.windowHeight
+          height: res.windowHeight,
+          list: [],
+          lastId: 0,
+          isLast: false,
         })
       }
     })
+    this.getOrderList(0)
+
 
   },
 
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
+  onTabItemTap(item) {
     this.setData({
       list: [],
       lastId: 0,
       isLast: false,
     })
     this.getOrderList(0)
-  },
-
-  onTabItemTap(item) {
   }
 })

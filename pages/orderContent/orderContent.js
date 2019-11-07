@@ -12,6 +12,7 @@ Page({
   },
   getOrder(id) {
     wx.showNavigationBarLoading()
+    wx.showLoading()
     wx.request({
       url: apiPath.getOrder,
       method: 'get',
@@ -28,11 +29,14 @@ Page({
           this.setData({
             order: _data
           })
-          wx.hideNavigationBarLoading()
         }
       },
       fail: (err) => {
         app.showInfo(res.data.message)
+      },
+      complete: () => {
+        wx.hideLoading()
+        wx.hideNavigationBarLoading()
       }
     })
   },
