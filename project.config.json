@@ -48,6 +48,10 @@
 			"currentL": -1,
 			"list": []
 		},
+		"gamePlugin": {
+			"current": -1,
+			"list": []
+		},
 		"miniprogram": {
 			"current": 4,
 			"list": [
@@ -76,7 +80,7 @@
 					"id": 3,
 					"name": "视频详情",
 					"pathName": "pages/videoContent/videoContent",
-					"query": "id=17",
+					"query": "id=54",
 					"scene": null
 				},
 				{

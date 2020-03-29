@@ -74,7 +74,8 @@ Page({
     return {
       title: '视频分享',
       desc: '母婴护理课-第十七节婴幼儿疾病护理（下）',
-      path: this.data.video.picture_url
+      path: '/pages/videoContent/videoContent?id='+this.data.id,
+      imageUrl: this.data.video.picture_url
     }
   },
   waitingFun(){
