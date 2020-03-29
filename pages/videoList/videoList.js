@@ -11,7 +11,7 @@ Page({
     // 分页
     lastId: 0,
     isLast: true,
-    pageNumber: 6,
+    pageNumber: 15,
     //轮播
     bannerImage: [],
     //轮播点
