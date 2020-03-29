@@ -1,6 +1,7 @@
 const app = getApp();
 const apiPath = require('../../config/apiPath.js');
 const config = require('../../config/config.js')
+const utils = 
 Page({
 
   /**
@@ -8,7 +9,8 @@ Page({
    */
   data: {
     order:{},
-    id: 1
+    id: 1,
+    isSharePageShow: false,
   },
   getOrder(id) {
     wx.showNavigationBarLoading()
@@ -39,6 +41,12 @@ Page({
         wx.hideNavigationBarLoading()
       }
     })
+  },
+  showShare(){
+    this.setData({
+      isSharePageShow: true
+    })
+    
   },
   call(){
     wx.makePhoneCall({

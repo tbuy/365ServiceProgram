@@ -9,6 +9,9 @@
         <view class="rightContent">
           <view class="name">{{filter.wordSubstring(item.name, 26)}}</view>
           <view>主讲人：{{filter.wordSubstring(item.teacher, 10)}}</view>
+          <view>上传于：{{filter.formatDate(item.created_at)}}</view>
+          
+
         </view>
       </view>
     </view>

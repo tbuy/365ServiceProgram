@@ -18,8 +18,13 @@ function formatDate(time) {
 function wordSubstring(val,length){
   return val.length > length ? val.substring(0, length - 1) + "..." : val;
 }
+function getParentName(val){
+  val = val.toString();
+  return val[0]?val[0]:''
+}
 module.exports = {
   formatDate: formatDate ,
-  wordSubstring: wordSubstring
+  wordSubstring: wordSubstring,
+  getParentName: getParentName,
 }
 

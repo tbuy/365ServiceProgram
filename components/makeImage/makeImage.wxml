@@ -1,0 +1,10 @@
+<view class="share-wrap" wx:if="{{visible}}" catchtouchmove="preventDefault">
+  <view class="share-back"></view>
+  <view class="share-container">
+    <view class="close" bindtap="handleClose"></view>
+    <image mode="widthFix" src="{{sharePath}}" class="share-image" />
+    <view class="share-tips">保存图片，叫伙伴们来接单吧</view>
+    <view class="save-btn" bindtap="handlePhotoSaved">保存</view>
+  </view>
+</view>
+<painter style="position: absolute; top: -9999rpx;" palette="{{imgDraw}}" bind:imgOK="onImgOK" />

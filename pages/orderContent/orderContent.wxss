@@ -5,13 +5,28 @@
 }
 .order-card {
   width: 100%;
+  position: relative;
   background-color: fff;
   border-radius: 10rpx;
   box-shadow: 10rpx 10rpx 10rpx #f5f5f5;
   border: 1px solid #f5f5f5;
   box-sizing: border-box;
 }
-
+.share-box {
+  position:absolute;
+  right: 40rpx;
+  top: 10rpx;
+  height: 40rpx;
+  width: 40rpx;
+  z-index:200;
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
+}
+.icon{
+  height: 40rpx;
+  width: 40rpx;
+}
 .title {
   font-weight: 700;
   font-size: 32rpx;
@@ -65,4 +80,8 @@ text {
   bottom: 40rpx;
   left: 0;
   right: 0;
+}
+.makeImage{
+  height: 300rpx;
+  width: 100%;
 }

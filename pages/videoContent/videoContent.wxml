@@ -1,14 +1,29 @@
+<wxs src="./../filter.wxs" module="filter" />
 <view class='video'>
-  <video id="myVideo" poster="{{video.picture_url}}" src="{{video.video_src}}" controls bindwaiting='waitingFun' autoplay></video>
+  <video id="myVideo" 
+    poster="{{video.picture_url}}" 
+    src="{{video.video_src}}" 
+    controls 
+    bindwaiting='waitingFun' 
+    bindtimeupdate='recordFun'
+    autoplay
+    show-mute-btn="true"></video>
   <view class="content">
     <view class="first">
       <view class="name">{{video.name}}</view>
       <view>主讲人：{{video.teacher}}</view>
+      <view class="create_at">上传于：{{filter.formatDate(video.created_at)}}</view>
+      <view></view>
+      <!-- <view>播放次数：</view> -->
+      <!-- <view>点赞：</view> -->
+      <!-- <view>时长</view> -->
+      <!-- <view>标签</view> -->
+
+      <button open-type="share" bindtap="shareInfo"  class='public_button_big theme_btn'>分享给朋友</button>
     </view>
     <view class="second">
-      <view class="title">简介</view>
+      <view class="title">课程简介</view>
       <image src="{{video.video_detail_url}}" mode="widthFix"></image>
     </view>
   </view>
-
 </view>

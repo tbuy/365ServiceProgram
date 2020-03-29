@@ -1,5 +1,9 @@
+<wxs src="./../filter.wxs" module="filter" />
 <view class='order' wx:if="{{order.work_type}}">
   <view class="order-card">
+    <view class="share-box" bindtap="showShare">
+      <image class="icon" src="/images/order-share.png" />
+    </view>
     <view class='title ellipsis'>{{order.work_type}}</view>
     <view class='price'>{{order.wage || '面议'}}</view>
     <view class="public">
@@ -15,6 +19,14 @@
   </view>
   <view class='detail-title' vx-if="{{order.order_details}}">岗位职责</view>
   <view class='detail'>{{order.order_details}}</view>
+  <view class='detail-title'>安置老师</view>
+  <view class='detail'>{{filter.getParentName(order.agent_manager_name)+'老师'}}</view>
+  <view class='detail-title'>电话</view>
+  <view class='detail'>{{order.agent_manager_phone}}</view>
+  <view class="makeImage">
+    <makeImage isCanDraw="{{isSharePageShow}}" imageItem="{{order}}"></makeImage>
+  </view>
+  
   <button class='public_button_big theme_btn' bindtap='call'>立即抢单</button>
 </view>
 <view wx:else class="nodata">暂无数据</view>

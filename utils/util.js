@@ -14,8 +14,14 @@ const formatNumber = n => {
   return n[1] ? n : '0' + n
 }
 
+const formatString = n => {
+  n = n.toString()
+  return n[0] ? n[0] : '-' 
+}
+
 
 
 module.exports = {
   formatTime: formatTime,
+  formatString: formatString,
 }
