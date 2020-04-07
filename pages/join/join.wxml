@@ -1,0 +1,31 @@
+<view>
+<van-image
+  width="100"
+  height="100"
+  src="https://img.yzcdn.cn/vant/cat.jpeg"
+/>
+<van-cell-group>
+  <van-field
+    value="{{ joinForm.name }}"
+    placeholder="请输入姓名"
+    border="{{ true }}"
+    bind:change="onChange"
+  />
+  <van-field
+    value="{{ joinForm.phone }}"
+    placeholder="请输入手机号"
+    border="{{ true }}"
+    bind:change="onChange"
+  />
+  <van-field
+    custom-class="seller_remarks"
+    value="{{ joinForm.seller_remarks }}"
+    type="textarea"
+    placeholder="请输入个人信息"
+    border="{{ true }}"
+    bind:change="onChange"
+    autosize
+  />
+</van-cell-group>
+<!-- <van-button color="#ff7832" type="default">默认按钮</van-button> -->
+</view>

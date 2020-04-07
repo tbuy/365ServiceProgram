@@ -34,7 +34,11 @@ module.exports = {
   //获取单个视频 get {id}
   getVideo: apiPath + "/staff/common/getVideo",
 
-  
+  // 劳动者手机号查重
+  checkStaffrPhone: apiPath + "/staff/common/checkStaffPhone",
+
+  // 小程序添加劳动者
+  applyStaff: apiPath + "/staff/common/applyStaff",
 
 
 

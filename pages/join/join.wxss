@@ -1,0 +1,9 @@
+
+/* pages/join/join.wxss */
+
+
+.seller_remarks{
+  display:block;
+  height: 120rpx;
+  padding: 20rpx;
+}

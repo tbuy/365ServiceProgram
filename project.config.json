@@ -71,6 +71,13 @@
 				},
 				{
 					"id": -1,
+					"name": "加入我们",
+					"pathName": "pages/join/join",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
 					"name": "视频列表",
 					"pathName": "pages/videoList/videoList",
 					"query": "",
@@ -88,6 +95,13 @@
 					"name": "求职详情",
 					"pathName": "pages/orderContent/orderContent",
 					"query": "id=5",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "我的",
+					"pathName": "pages/user/user",
+					"query": "",
 					"scene": null
 				}
 			]

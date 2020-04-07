@@ -12,7 +12,9 @@
     "pages/videoList/videoList",
     "pages/videoContent/videoContent",
     "pages/success/success",
-    "pages/activity/activity"
+    "pages/activity/activity",
+    "pages/staffCard/staffCard",
+    "pages/join/join"
   ],
   "window": {
     "backgroundTextStyle": "dark",

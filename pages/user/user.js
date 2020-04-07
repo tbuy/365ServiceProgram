@@ -1,5 +1,7 @@
 const app = getApp();
+const request = require('../../request/request.js');
 const config = require('../../config/config.js');
+const apiPath = require('../../config/apiPath.js');
 
 Page({
 
@@ -14,12 +16,18 @@ Page({
     //   title: '求职意向',
     //   router: '/pages/intention/intention'
     // }, 
-    // {
-    //   id: 2,
-    //   iconClass: 'icon-resume',
-    //   title: '我的简历',
-    //   router: ''
-    // }, 
+      {
+        id: 1,
+        iconClass: 'icon-order',
+        title: '加入我们',
+        router: '/pages/join/join'
+      }, 
+    {
+      id: 2,
+      iconClass: 'icon-resume',
+      title: '我的名片',
+      router: '/pages/staffCard/staffCard'
+    }, 
     {
       id: 3,
       iconClass: 'icon-about',
@@ -37,7 +45,7 @@ Page({
       router: ''
     }],
     isLogin: false,
-    userName: '',
+    userName: '',//手机号
     icon: ''
   },
   //获取用户信息
@@ -65,20 +73,29 @@ Page({
       }
     } else {
       if (e.currentTarget.dataset.router) {
-        wx.navigateTo({
-          url: e.currentTarget.dataset.router,
-        })
+        if (e.currentTarget.dataset.id == 2) {
+          let isOurStaff = this.chackStaffPhone()
+          if (!isOurStaff) {
+            wx.navigateTo({
+              url: e.currentTarget.dataset.router,
+            })
+          } else {
+            app.showInfo('请填写个人信息')
+          }
+        } else {
+          wx.navigateTo({
+            url: e.currentTarget.dataset.router,
+          })
+        }
+        
       } else if (e.currentTarget.dataset.id == 5) {
         wx.makePhoneCall({
           phoneNumber: config.phone
         })
-      } else {
+      }  else {
         app.showInfo('敬请期待')
       }
     }
-
-
-
   },
   //退出登录
   logout() {
@@ -88,6 +105,23 @@ Page({
       app.hideLoading(0)
       wx.reLaunch({ url: '/pages/user/user' })
     }, 800)
+  },
+  //检查劳动者是否在保姆库
+  chackStaffPhone(){
+    request.request(apiPath.checkStaffrPhone, 'POST', 
+    { phone: this.data.userName,
+      id: 0, 
+    }).then(data => {
+      if(data.code =='0'){
+        return true
+      } 
+    }).catch(error => {
+      if(error.code == '1'){
+        return false
+      } else {
+        app.showInfo('出错了...')
+      }
+    })
   },
   /**
    * 生命周期函数--监听页面加载
