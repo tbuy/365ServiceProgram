@@ -1,31 +1,87 @@
-<view>
-<van-image
-  width="100"
-  height="100"
-  src="https://img.yzcdn.cn/vant/cat.jpeg"
-/>
-<van-cell-group>
-  <van-field
-    value="{{ joinForm.name }}"
-    placeholder="请输入姓名"
-    border="{{ true }}"
-    bind:change="onChange"
-  />
-  <van-field
-    value="{{ joinForm.phone }}"
-    placeholder="请输入手机号"
-    border="{{ true }}"
-    bind:change="onChange"
-  />
-  <van-field
-    custom-class="seller_remarks"
-    value="{{ joinForm.seller_remarks }}"
-    type="textarea"
-    placeholder="请输入个人信息"
-    border="{{ true }}"
-    bind:change="onChange"
-    autosize
-  />
-</van-cell-group>
-<!-- <van-button color="#ff7832" type="default">默认按钮</van-button> -->
+<view class="join">
+  <view class="logo">
+    <van-image width="120" height="120" src='/images/logo.jpg' />
+  </view>
+  <view class="title">基本信息</view>
+  <form bindsubmit="formSubmit">
+    <view class='input'>
+      <view class="sub-title">姓名</view>
+      <input name="name" placeholder="请填写姓名" placeholder-class="placeholder" type="text" value="{{name}}" bindinput='nameInput' />
+    </view>
+    <view class='input'>
+      <view class="sub-title">手机号</view>
+      <input name="phone" placeholder="请填写手机号" type="number" value="{{phone}}" bindinput='phoneInput' />
+    </view>
+    <view class='input'>
+      <view class="sub-title">性别</view>
+      <radio-group class="radio-group" bindchange="sexChange">
+        <radio class="radio" value="1" checked color="#1989fa">
+          <text class="text">男</text>
+        </radio>
+        <radio class="radio" value="2" color="#1989fa">
+          <text class="text">女</text>
+        </radio>
+      </radio-group>
+    </view>
+    <view class='input'>
+      <view class="sub-title">身份证号</view>
+      <input name="identify" placeholder="请填写身份证号" type="idcard" value="{{identify}}" bindinput='identifyInput' />
+    </view>
+    <view class='input'>
+      <view class="sub-title">生日</view>
+      <picker mode="date" value="{{birthday}}" start="2015-09-01" end="2017-09-01" bindchange="birthdayChange">
+        <view class="picker">{{birthday || "请选择生日"}}</view>
+      </picker>
+    </view>
+    <view class='input'>
+      <view class="sub-title">学历</view>
+      <picker bindchange="educationPickerChange" value="{{index}}" range="{{educationArr}}">
+        <view class="picker">{{education || '请选择学历'}}</view>
+      </picker>
+    </view>
+    <view class='input'>
+      <view class="sub-title">婚姻状况</view>
+      <radio-group class="radio-group" bindchange="marryChange">
+        <radio class="radio" value="1" checked color="#1989fa">
+          <text class="text">是</text>
+        </radio>
+        <radio class="radio" value="2" color="#1989fa">
+          <text class="text">否</text>
+        </radio>
+      </radio-group>
+    </view>
+    <view class='input'>
+      <view class="sub-title">生肖</view>
+      <picker bindchange="signPickerChange" value="{{index}}" range="{{zodiac_signArr}}">
+        <view class="picker">{{zodiac_sign || '请选择生肖'}}</view>
+      </picker>
+    </view>
+    <view class='input'>
+      <view class="sub-title">身高</view>
+      <input name="height" placeholder="请填写身高" type="text" value="{{height}}" bindinput='heightInput' />
+    </view>
+    <view class='input'>
+      <view class="sub-title">体重</view>
+      <input name="weight" placeholder="请填写体重" type="text" value="{{weight}}" bindinput='weightInput' />
+    </view>
+    <view class='input'>
+      <view class="sub-title">现住址</view>
+      <input name="address" placeholder="请填写现住址" type="text" value="{{address}}" bindinput='addressInput' />
+    </view>
+    <view class='input'>
+      <view class="sub-title">紧急联系人</view>
+      <input name="uphone" placeholder="请填写紧急联系人" type="text" value="{{urgent_phone}}" bindinput='uphoneInput' />
+    </view>
+    <view class='input'>
+      <view class="sub-title">户籍地址</view>
+      <input name="addressIn" placeholder="请填写户籍地址" type="text" value="{{address_in_law}}" bindinput='addressInInput' />
+    </view>
+    <view class="title">基本信息</view>
+    <view class='input textarea'>
+      <view class="sub-title">备注信息</view>
+      <textarea placeholder="请填写备注信息" name="remarks" value="{{remarks}}" bindinput='remarksInInput' />
+    </view>
+    <button class='submit-button' form-type="submit">提交</button>
+  </form>
 </view>
+<!-- https://developers.weixin.qq.com/miniprogram/dev/component/textarea.html -->

@@ -1,9 +1,65 @@
-
 /* pages/join/join.wxss */
+.join {
+  background-color: #f9f9f9;
+  overflow: hidden;
+}
 
+.logo {
+  text-align: center;
+  margin-top: 40rpx;
+}
 
-.seller_remarks{
-  display:block;
-  height: 120rpx;
-  padding: 20rpx;
+.title {
+  margin: 60rpx 0 30rpx;
+  padding: 0 32rpx;
+  color: rgba(69, 90, 100, 0.6);
+  font-size: 28rpx;
+  line-height: 32rpx;
+}
+
+.input {
+  display: flex;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 20rpx 32rpx;
+  color: #323233;
+  font-size: 28rpx;
+  line-height: 48rpx;
+  background-color: #fff;
+  border-bottom: 1px solid #ebedf0;
+}
+
+.placeholder {
+  line-height: 48rpx;
+
+}
+
+.radio-group {
+  font-size: 28rpx;
+  line-height: 32rpx;
+}
+
+.text {
+  margin: 0 20rpx 0 10rpx;
+}
+
+.sub-title {
+  width: 200rpx;
+}
+
+.textarea {
+  height: 160rpx;
+  background-color: #fff;
+
+}
+
+.submit-button {
+  color: rgb(255, 255, 255);
+  background: rgb(255, 120, 50);
+  border-color: rgb(255, 120, 50);
+  line-height: 80rpx;
+  text-align: center;
+  margin: 100rpx auto;
+  width: 90%;
+  border-radius: 40rpx;
 }
